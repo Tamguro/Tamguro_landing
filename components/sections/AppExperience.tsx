@@ -62,7 +62,7 @@ export default function AppExperience(): JSX.Element {
                 story.reverse ? "lg:flex-row-reverse" : ""
               }`}
             >
-              <div className="flex max-w-[430px] flex-col items-center gap-[12px] text-center lg:flex-row lg:items-start lg:gap-[16px] lg:text-left">
+              <div className="flex max-w-[430px] flex-col items-center gap-[12px] text-center lg:flex-row lg:items-start lg:gap-[36px] lg:text-left">
                 <p className="font-['Pretendard'] shrink-0 text-[54px] leading-[66px] font-bold text-[#ff9500]">
                   {story.number}
                 </p>
