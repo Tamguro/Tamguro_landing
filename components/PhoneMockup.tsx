@@ -112,6 +112,13 @@ const BODY_SIZE = {
     childInfoW: "w-[115.3px]",
     childName: "text-[10.3px]",
     childGrade: "text-[7.3px]",
+    summaryPad: "p-[11.7px]",
+    summaryGap: "gap-[4.7px]",
+    summaryRadius: "rounded-[11.7px]",
+    summaryTitle: "text-[12.2px]",
+    summarySub: "text-[7.6px]",
+    reqH: "h-[30.3px]",
+    reqInfoW: "w-[104.9px]",
   },
   compact: {
     title: "text-[11.1px]",
@@ -164,6 +171,13 @@ const BODY_SIZE = {
     childInfoW: "w-[75.2px]",
     childName: "text-[6.7px]",
     childGrade: "text-[4.7px]",
+    summaryPad: "p-[7.6px]",
+    summaryGap: "gap-[3px]",
+    summaryRadius: "rounded-[7.6px]",
+    summaryTitle: "text-[8px]",
+    summarySub: "text-[4.9px]",
+    reqH: "h-[19.8px]",
+    reqInfoW: "w-[68.4px]",
   },
 } as const;
 
@@ -327,6 +341,79 @@ function ParentHomeBody({ b }: { b: BodySize }): JSX.Element {
   );
 }
 
+function MentorAppExperienceBody({ b }: { b: BodySize }): JSX.Element {
+  return (
+    <>
+      <div className={`flex items-center justify-between ${b.title}`}>
+        <p className="font-bold text-[#1f2430]">홈</p>
+        <div
+          className={`flex ${b.avatarBox} items-center justify-center rounded-[8.5px] border-[0.6px] border-[#e8e5db] bg-white`}
+        >
+          <p className={`font-bold text-[#1f2430] ${b.avatarText}`}>서</p>
+        </div>
+      </div>
+
+      <div
+        className={`flex flex-col ${b.summaryGap} ${b.summaryPad} ${b.summaryRadius} whitespace-nowrap bg-[rgba(255,149,0,0.14)]`}
+      >
+        <p className={`font-bold text-[#1f2430] ${b.summaryTitle}`}>
+          서정우 멘토님, 안녕하세요
+        </p>
+        <p className={`font-normal text-[#667085] ${b.summarySub}`}>
+          확인이 필요한 신청 2건이 있어요.
+        </p>
+      </div>
+
+      <div className={`flex items-center justify-between ${b.sectionHeaderH}`}>
+        <p className={`font-bold text-[#1f2430] ${b.sectionTitle}`}>
+          새 멘토링 신청
+        </p>
+        <p className={`font-medium whitespace-nowrap text-[#667085] ${b.sectionMore}`}>
+          전체 보기
+        </p>
+      </div>
+
+      <div className={`flex flex-col ${b.childPad} rounded-[12.1px]`}>
+        <div className={`flex items-center ${b.childGap} ${b.reqH}`}>
+          <div className={`flex ${b.childAvatar} items-center justify-center rounded-[8.5px] bg-[rgba(255,149,0,0.14)]`}>
+            <p className={`font-bold text-[#1f2430] ${b.childAvatarText}`}>김</p>
+          </div>
+          <div className={`flex flex-1 flex-col ${b.childInfoGap} ${b.reqInfoW}`}>
+            <p className={`font-bold text-[#1f2430] ${b.childName}`}>김학생</p>
+            <p className={`font-normal text-[#667085] ${b.childGrade}`}>
+              화학 탐구 주제 상담
+            </p>
+          </div>
+          <div className={`flex ${b.badgePadX} ${b.badgePadY} ${b.badgeRadius} bg-[rgba(204,204,204,0.2)]`}>
+            <p className={`font-bold whitespace-nowrap text-[#1f2430] ${b.badgeText}`}>
+              승인 대기
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className={`flex flex-col ${b.childPad} rounded-[12.1px]`}>
+        <div className={`flex items-center ${b.childGap} ${b.reqH}`}>
+          <div className={`flex ${b.childAvatar} items-center justify-center rounded-[8.5px] bg-[rgba(255,149,0,0.14)]`}>
+            <p className={`font-bold text-[#1f2430] ${b.childAvatarText}`}>이</p>
+          </div>
+          <div className={`flex flex-1 flex-col ${b.childInfoGap} ${b.reqInfoW}`}>
+            <p className={`font-bold text-[#1f2430] ${b.childName}`}>이하늘</p>
+            <p className={`font-normal text-[#667085] ${b.childGrade}`}>
+              학생부 활동 점검
+            </p>
+          </div>
+          <div className={`flex ${b.badgePadX} ${b.badgePadY} ${b.badgeRadius} bg-[rgba(204,204,204,0.2)]`}>
+            <p className={`font-bold whitespace-nowrap text-[#1f2430] ${b.badgeText}`}>
+              승인 대기
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
 function BodyContent({
   variant,
   b,
@@ -342,7 +429,7 @@ function BodyContent({
     case "parent-app-experience":
       return <ParentHomeBody b={b} />;
     case "mentor-app-experience":
-      return <StudentHomeBody b={b} />;
+      return <MentorAppExperienceBody b={b} />;
   }
 }
 
