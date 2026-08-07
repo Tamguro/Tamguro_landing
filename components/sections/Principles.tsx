@@ -32,7 +32,7 @@ export default function Principles(): JSX.Element {
       id="principles"
       className="border-t border-[#e8e5db] bg-white px-[20px] py-[72px] md:px-[80px] md:py-[104px]"
     >
-      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-x-[110px] gap-y-[56px] lg:grid-cols-2">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-x-[80px] gap-y-[56px] lg:grid-cols-[2fr_3fr]">
         {/* Left column */}
         <div className="relative flex flex-col gap-[24px] border-l-[10px] border-[rgba(255,149,0,0.14)] pl-[30px]">
           <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">
@@ -48,7 +48,7 @@ export default function Principles(): JSX.Element {
             <br />
             더 많은 기능보다 더 높은 신뢰입니다.
           </p>
-          <p className="font-['Pretendard'] pt-[24px] text-[72px] leading-none font-bold whitespace-nowrap text-[rgba(255,149,0,0.14)] md:text-[112px]">
+          <p className="font-['Pretendard'] pt-[4px] text-[72px] leading-none font-bold whitespace-nowrap text-[rgba(255,149,0,0.14)] md:text-[112px]">
             TRUST
           </p>
         </div>
@@ -58,17 +58,19 @@ export default function Principles(): JSX.Element {
           {PRINCIPLES.map((principle) => (
             <div
               key={principle.number}
-              className="flex flex-col gap-[10px] border-t border-[#e8e5db] py-[46px] sm:flex-row sm:items-start sm:gap-[40px]"
+              className="flex flex-col gap-[10px] border-t border-[#e8e5db] py-[46px] sm:flex-row sm:items-start sm:gap-[24px]"
             >
-              <p className="font-['Pretendard'] w-[52px] shrink-0 text-[18px] font-bold text-[#ff9500]">
+              <p className="font-['Pretendard'] w-[40px] shrink-0 text-[18px] font-bold text-[#ff9500]">
                 {principle.number}
               </p>
-              <h3 className="font-['Pretendard'] w-full shrink-0 text-[22px] leading-[31px] font-bold text-[#1f2430] sm:w-[250px]">
-                {principle.title}
-              </h3>
-              <p className="font-['Pretendard'] text-[15px] leading-[25px] text-[#667085]">
-                {principle.description}
-              </p>
+              <div className="flex min-w-0 flex-1 flex-col gap-[10px] sm:flex-row sm:items-start sm:gap-[24px]">
+                <h3 className="font-['Pretendard'] shrink-0 text-[22px] leading-[31px] font-bold text-[#1f2430] sm:w-[210px]">
+                  {principle.title}
+                </h3>
+                <p className="font-['Pretendard'] min-w-0 flex-1 text-[15px] leading-[25px] text-[#667085]">
+                  {principle.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

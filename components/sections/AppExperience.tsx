@@ -58,7 +58,7 @@ export default function AppExperience(): JSX.Element {
           {ROLE_STORIES.map((story) => (
             <div
               key={story.number}
-              className={`flex flex-col items-center gap-[40px] border-t border-[#e8e5db] py-[72px] lg:flex-row lg:items-center lg:justify-between lg:gap-[80px] ${
+              className={`flex flex-col items-center gap-[40px] border-t border-[#e8e5db] py-[72px] lg:flex-row lg:items-start lg:justify-between lg:gap-[80px] ${
                 story.reverse ? "lg:flex-row-reverse" : ""
               }`}
             >
