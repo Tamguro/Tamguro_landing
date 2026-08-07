@@ -33,10 +33,10 @@ export default function AppExperience(): JSX.Element {
   return (
     <section
       id="app-experience"
-      className="border-t border-[#e8e5db] bg-white px-[20px] py-[64px] md:px-[80px] md:py-[96px]"
+      className="border-t border-[#e8e5db] bg-white px-[20px] py-[80px] md:px-[80px] md:py-[128px]"
     >
       <div className="mx-auto max-w-[1280px]">
-        <div className="flex flex-col gap-[16px] pb-[40px] lg:flex-row lg:items-start lg:justify-between lg:gap-[80px]">
+        <div className="flex flex-col gap-[16px] pb-[80px] lg:flex-row lg:items-start lg:justify-between lg:gap-[80px]">
           <div className="flex flex-col gap-[16px]">
             <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">
               APP EXPERIENCE
@@ -58,7 +58,7 @@ export default function AppExperience(): JSX.Element {
           {ROLE_STORIES.map((story) => (
             <div
               key={story.number}
-              className={`flex flex-col items-center gap-[32px] border-t border-[#e8e5db] py-[48px] lg:flex-row lg:items-center lg:justify-between lg:gap-[80px] ${
+              className={`flex flex-col items-center gap-[40px] border-t border-[#e8e5db] py-[72px] lg:flex-row lg:items-center lg:justify-between lg:gap-[80px] ${
                 story.reverse ? "lg:flex-row-reverse" : ""
               }`}
             >

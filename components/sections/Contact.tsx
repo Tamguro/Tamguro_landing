@@ -4,9 +4,9 @@ export default function Contact(): JSX.Element {
   return (
     <section
       id="contact"
-      className="border-t border-[#e8e5db] bg-white px-[20px] py-[64px] md:px-[80px] md:py-[96px]"
+      className="border-t border-[#e8e5db] bg-white px-[20px] py-[80px] md:px-[80px] md:py-[132px]"
     >
-      <div className="mx-auto flex max-w-[1280px] flex-col gap-[40px] rounded-[32px] bg-[rgba(255,149,0,0.14)] p-[32px] md:p-[48px] lg:flex-row lg:items-stretch lg:gap-0">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-[40px] rounded-[32px] bg-[rgba(255,149,0,0.14)] p-[40px] md:p-[72px] lg:flex-row lg:items-stretch lg:gap-0">
         {/* Intro */}
         <div className="flex flex-col justify-center gap-[16px] lg:w-[420px] lg:pr-[40px]">
           <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">

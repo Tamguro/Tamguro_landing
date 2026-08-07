@@ -30,7 +30,7 @@ export default function Principles(): JSX.Element {
   return (
     <section
       id="principles"
-      className="border-t border-[#e8e5db] bg-white px-[20px] py-[64px] md:px-[80px] md:py-[96px]"
+      className="border-t border-[#e8e5db] bg-white px-[20px] py-[72px] md:px-[80px] md:py-[104px]"
     >
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-x-[110px] gap-y-[56px] lg:grid-cols-2">
         {/* Left column */}
@@ -58,7 +58,7 @@ export default function Principles(): JSX.Element {
           {PRINCIPLES.map((principle) => (
             <div
               key={principle.number}
-              className="flex flex-col gap-[10px] border-t border-[#e8e5db] py-[28px] sm:flex-row sm:items-start sm:gap-[40px]"
+              className="flex flex-col gap-[10px] border-t border-[#e8e5db] py-[46px] sm:flex-row sm:items-start sm:gap-[40px]"
             >
               <p className="font-['Pretendard'] w-[52px] shrink-0 text-[18px] font-bold text-[#ff9500]">
                 {principle.number}
