@@ -62,19 +62,21 @@ export default function AppExperience(): JSX.Element {
                 story.reverse ? "lg:flex-row-reverse" : ""
               }`}
             >
-              <div className="flex max-w-[430px] flex-col items-center gap-[12px] text-center lg:items-start lg:text-left">
-                <p className="font-['Pretendard'] text-[54px] leading-[66px] font-bold text-[#ff9500]">
+              <div className="flex max-w-[430px] flex-col items-center gap-[12px] text-center lg:flex-row lg:items-start lg:gap-[16px] lg:text-left">
+                <p className="font-['Pretendard'] shrink-0 text-[54px] leading-[66px] font-bold text-[#ff9500]">
                   {story.number}
                 </p>
-                <p className="font-['Pretendard'] text-[14px] font-bold whitespace-nowrap text-[#ff9500]">
-                  {story.role}
-                </p>
-                <h3 className="font-['Pretendard'] text-[26px] leading-[38px] font-bold text-[#1f2430] md:text-[30px] md:leading-[42px]">
-                  {story.title}
-                </h3>
-                <p className="font-['Pretendard'] text-[15px] leading-[26px] text-[#667085] md:text-[16px] md:leading-[28px]">
-                  {story.description}
-                </p>
+                <div className="flex flex-col items-center gap-[12px] text-center lg:items-start lg:pt-[4px] lg:text-left">
+                  <p className="font-['Pretendard'] text-[14px] font-bold whitespace-nowrap text-[#ff9500]">
+                    {story.role}
+                  </p>
+                  <h3 className="font-['Pretendard'] text-[26px] leading-[38px] font-bold text-[#1f2430] md:text-[30px] md:leading-[42px]">
+                    {story.title}
+                  </h3>
+                  <p className="font-['Pretendard'] text-[15px] leading-[26px] text-[#667085] md:text-[16px] md:leading-[28px]">
+                    {story.description}
+                  </p>
+                </div>
               </div>
 
               <div className="relative flex shrink-0 items-center justify-center">
