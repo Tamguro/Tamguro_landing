@@ -32,7 +32,7 @@ export default function Principles(): JSX.Element {
       id="principles"
       className="border-t border-[#e8e5db] bg-white px-[20px] py-[64px] md:px-[80px] md:py-[96px]"
     >
-      <div className="grid grid-cols-1 gap-x-[110px] gap-y-[56px] lg:grid-cols-2">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-x-[110px] gap-y-[56px] lg:grid-cols-2">
         {/* Left column */}
         <div className="relative flex flex-col gap-[24px] border-l-[10px] border-[rgba(255,149,0,0.14)] pl-[30px]">
           <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">

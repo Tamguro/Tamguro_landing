@@ -26,31 +26,33 @@ export default function ForEveryRole(): JSX.Element {
       id="for-every-role"
       className="border-t border-[#e8e5db] bg-white px-[20px] py-[64px] md:px-[80px] md:py-[96px]"
     >
-      <div className="flex flex-col gap-[16px] pb-[56px]">
-        <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">
-          FOR EVERY ROLE
-        </p>
-        <h2 className="font-['Pretendard'] text-[32px] leading-[42px] font-bold text-[#1f2430] md:text-[42px] md:leading-[56px]">
-          서로 다른 역할을,
-          <br />
-          하나의 성장 경험으로.
-        </h2>
-      </div>
+      <div className="mx-auto max-w-[1280px]">
+        <div className="flex flex-col gap-[16px] pb-[56px]">
+          <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">
+            FOR EVERY ROLE
+          </p>
+          <h2 className="font-['Pretendard'] text-[32px] leading-[42px] font-bold text-[#1f2430] md:text-[42px] md:leading-[56px]">
+            서로 다른 역할을,
+            <br />
+            하나의 성장 경험으로.
+          </h2>
+        </div>
 
-      <div className="grid grid-cols-1 gap-[48px] md:grid-cols-3 md:gap-0 md:divide-x md:divide-[#e8e5db]">
-        {ROLES.map((role) => (
-          <div key={role.label} className="flex flex-col gap-[12px] md:px-[40px] md:first:pl-0">
-            <p className="font-['Pretendard'] text-[14px] font-bold whitespace-nowrap text-[#ff9500]">
-              {role.label}
-            </p>
-            <h3 className="font-['Pretendard'] text-[22px] leading-[32px] font-bold text-[#1f2430] md:text-[24px] md:leading-[34px]">
-              {role.title}
-            </h3>
-            <p className="font-['Pretendard'] text-[15px] leading-[26px] text-[#667085]">
-              {role.description}
-            </p>
-          </div>
-        ))}
+        <div className="grid grid-cols-1 gap-[48px] md:grid-cols-3 md:gap-0 md:divide-x md:divide-[#e8e5db]">
+          {ROLES.map((role) => (
+            <div key={role.label} className="flex flex-col gap-[12px] md:px-[40px] md:first:pl-0">
+              <p className="font-['Pretendard'] text-[14px] font-bold whitespace-nowrap text-[#ff9500]">
+                {role.label}
+              </p>
+              <h3 className="font-['Pretendard'] text-[22px] leading-[32px] font-bold text-[#1f2430] md:text-[24px] md:leading-[34px]">
+                {role.title}
+              </h3>
+              <p className="font-['Pretendard'] text-[15px] leading-[26px] text-[#667085]">
+                {role.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

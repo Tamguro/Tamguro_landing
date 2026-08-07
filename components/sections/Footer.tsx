@@ -3,7 +3,7 @@ import type { JSX } from "react";
 export default function Footer(): JSX.Element {
   return (
     <footer className="border-t border-[#e8e5db] bg-white px-[20px] py-[48px] md:px-[80px]">
-      <div className="flex flex-col gap-[32px] md:flex-row md:items-start md:justify-between">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-[32px] md:flex-row md:items-start md:justify-between">
         <div className="flex flex-col gap-[8px]">
           <div className="flex items-center gap-[12px]">
             <p className="font-['Pretendard'] text-[28px] font-bold whitespace-nowrap text-[#ff9500]">
