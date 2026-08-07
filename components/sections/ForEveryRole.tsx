@@ -24,9 +24,10 @@ export default function ForEveryRole(): JSX.Element {
   return (
     <section
       id="for-every-role"
-      className="border-t border-[#e8e5db] bg-white px-[20px] py-[72px] md:px-[80px] md:py-[156px]"
+      className="bg-white px-[20px] md:px-[80px]"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1280px] border-t border-[#e8e5db]" />
+      <div className="mx-auto max-w-[1280px] py-[72px] md:py-[156px]">
         <div className="flex flex-col gap-[16px] pb-[96px]">
           <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">
             FOR EVERY ROLE

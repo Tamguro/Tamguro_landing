@@ -30,9 +30,10 @@ export default function Principles(): JSX.Element {
   return (
     <section
       id="principles"
-      className="border-t border-[#e8e5db] bg-white px-[20px] py-[72px] md:px-[80px] md:py-[104px]"
+      className="bg-white px-[20px] md:px-[80px]"
     >
-      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-x-[80px] gap-y-[56px] lg:grid-cols-[2fr_3fr]">
+      <div className="mx-auto max-w-[1280px] border-t border-[#e8e5db]" />
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-x-[80px] gap-y-[56px] py-[72px] md:py-[104px] lg:grid-cols-[2fr_3fr]">
         {/* Left column */}
         <div className="relative flex flex-col gap-[24px] border-l-[10px] border-[rgba(255,149,0,0.14)] pl-[30px]">
           <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">

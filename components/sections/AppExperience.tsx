@@ -33,9 +33,10 @@ export default function AppExperience(): JSX.Element {
   return (
     <section
       id="app-experience"
-      className="border-t border-[#e8e5db] bg-white px-[20px] py-[80px] md:px-[80px] md:py-[128px]"
+      className="bg-white px-[20px] md:px-[80px]"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1280px] border-t border-[#e8e5db]" />
+      <div className="mx-auto max-w-[1280px] py-[80px] md:py-[128px]">
         <div className="flex flex-col gap-[16px] pb-[80px] lg:flex-row lg:items-start lg:justify-between lg:gap-[80px]">
           <div className="flex flex-col gap-[16px]">
             <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">
@@ -47,7 +48,7 @@ export default function AppExperience(): JSX.Element {
               같은 목표를 향해
             </h2>
           </div>
-          <p className="font-['Pretendard'] max-w-[450px] text-[16px] leading-[27px] text-[#667085] md:text-[17px] md:leading-[29px] lg:pt-[12px]">
+          <p className="font-['Pretendard'] max-w-[450px] text-[16px] leading-[27px] text-[#667085] md:text-[17px] md:leading-[29px] lg:pt-[44px]">
             학생, 학부모, 멘토는 서로 다른 화면을 사용하지만
             <br className="hidden md:block" />
             하나의 탐구 성장 경험으로 연결됩니다.
