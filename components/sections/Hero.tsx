@@ -7,7 +7,7 @@ export default function Hero(): JSX.Element {
       id="hero"
       className="overflow-hidden bg-white px-[20px] py-[64px] md:px-[80px] md:py-[96px]"
     >
-      <div className="mx-auto flex max-w-[1280px] flex-col items-start gap-[56px] lg:flex-row lg:items-center lg:justify-between lg:gap-[40px]">
+      <div className="mx-auto flex max-w-[1600px] flex-col items-start gap-[56px] lg:flex-row lg:items-center lg:justify-between lg:gap-[40px]">
         {/* Text column */}
         <div className="flex max-w-[650px] flex-col items-start gap-[24px]">
           <div className="flex h-[34px] items-center rounded-[17px] bg-[rgba(255,149,0,0.14)] px-[14px]">

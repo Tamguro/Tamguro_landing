@@ -10,7 +10,7 @@ const NAV_ITEMS = [
 export default function Header(): JSX.Element {
   return (
     <header className="sticky top-0 z-50 bg-white px-[20px] md:px-[80px]">
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between py-[18px] md:py-[28px]">
+      <div className="mx-auto flex max-w-[1600px] items-center justify-between py-[18px] md:py-[28px]">
         <div className="flex items-center gap-[10px]">
           <div className="flex size-[40px] items-center justify-center overflow-clip rounded-[14px] bg-[rgba(255,149,0,0.14)]">
             <p className="font-['Pretendard'] text-[14px] font-bold leading-[21px] whitespace-nowrap text-[#1f2430]">
@@ -34,7 +34,7 @@ export default function Header(): JSX.Element {
           ))}
         </nav>
       </div>
-      <div className="mx-auto max-w-[1280px] border-b border-[#e8e5db]" />
+      <div className="mx-auto max-w-[1600px] border-b border-[#e8e5db]" />
     </header>
   );
 }

@@ -35,8 +35,8 @@ export default function AppExperience(): JSX.Element {
       id="app-experience"
       className="bg-white px-[20px] md:px-[80px]"
     >
-      <div className="mx-auto max-w-[1280px] border-t border-[#e8e5db]" />
-      <div className="mx-auto max-w-[1280px] py-[80px] md:py-[128px]">
+      <div className="mx-auto max-w-[1600px] border-t border-[#e8e5db]" />
+      <div className="mx-auto max-w-[1600px] py-[80px] md:py-[128px]">
         <div className="flex flex-col gap-[16px] pb-[80px] lg:flex-row lg:items-start lg:justify-between lg:gap-[80px]">
           <div className="flex flex-col gap-[16px]">
             <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">
