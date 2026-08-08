@@ -7,7 +7,7 @@ export default function Contact(): JSX.Element {
       className="bg-white px-[20px] md:px-[80px]"
     >
       <div className="mx-auto max-w-[1600px] border-t border-[#e8e5db]" />
-      <div className="mx-auto max-w-[1600px] py-[80px] md:py-[132px]">
+      <div className="mx-auto max-w-[1600px] py-[112px] md:py-[185px]">
         <div className="flex flex-col gap-[40px] rounded-[32px] bg-[rgba(255,149,0,0.14)] p-[40px] md:p-[72px] lg:flex-row lg:items-stretch lg:gap-0">
           {/* Intro */}
           <div className="flex flex-col justify-center gap-[16px] lg:w-[420px] lg:pr-[40px]">

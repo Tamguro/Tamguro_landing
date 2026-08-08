@@ -33,7 +33,7 @@ export default function Principles(): JSX.Element {
       className="bg-white px-[20px] md:px-[80px]"
     >
       <div className="mx-auto max-w-[1600px] border-t border-[#e8e5db]" />
-      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-x-[80px] gap-y-[56px] py-[72px] md:py-[104px] lg:grid-cols-[2fr_3fr]">
+      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-x-[80px] gap-y-[56px] py-[101px] md:py-[146px] lg:grid-cols-[2fr_3fr]">
         {/* Left column */}
         <div className="relative flex flex-col gap-[24px] border-l-[10px] border-[rgba(255,149,0,0.14)] pl-[30px]">
           <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">
@@ -59,7 +59,7 @@ export default function Principles(): JSX.Element {
           {PRINCIPLES.map((principle) => (
             <div
               key={principle.number}
-              className="flex flex-col gap-[10px] border-t border-[#e8e5db] py-[46px] sm:flex-row sm:items-start sm:gap-[24px]"
+              className="flex flex-col gap-[10px] border-t border-[#e8e5db] py-[64px] sm:flex-row sm:items-start sm:gap-[24px]"
             >
               <p className="font-['Pretendard'] w-[40px] shrink-0 text-[18px] font-bold text-[#ff9500]">
                 {principle.number}

@@ -5,7 +5,7 @@ export default function Hero(): JSX.Element {
   return (
     <section
       id="hero"
-      className="overflow-hidden bg-white px-[20px] py-[64px] md:px-[80px] md:py-[96px]"
+      className="overflow-hidden bg-white px-[20px] py-[90px] md:px-[80px] md:py-[134px]"
     >
       <div className="mx-auto flex max-w-[1600px] flex-col items-start gap-[56px] lg:flex-row lg:items-center lg:justify-between lg:gap-[40px]">
         {/* Text column */}

@@ -27,8 +27,8 @@ export default function ForEveryRole(): JSX.Element {
       className="bg-white px-[20px] md:px-[80px]"
     >
       <div className="mx-auto max-w-[1600px] border-t border-[#e8e5db]" />
-      <div className="mx-auto max-w-[1600px] py-[72px] md:py-[156px]">
-        <div className="flex flex-col gap-[16px] pb-[96px]">
+      <div className="mx-auto max-w-[1600px] py-[101px] md:py-[218px]">
+        <div className="flex flex-col gap-[16px] pb-[134px]">
           <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">
             FOR EVERY ROLE
           </p>
