@@ -5,53 +5,53 @@ export default function Hero(): JSX.Element {
   return (
     <section
       id="hero"
-      className="overflow-hidden bg-white px-[20px] py-[90px] md:px-[80px] md:py-[134px]"
+      className="overflow-hidden bg-surface px-[20px] py-[90px] md:px-[80px] md:py-[134px]"
     >
       <div className="mx-auto flex max-w-[1600px] flex-col items-start gap-[56px] lg:flex-row lg:items-center lg:justify-between lg:gap-[40px]">
         {/* Text column */}
         <div className="flex max-w-[650px] flex-col items-start gap-[24px]">
-          <div className="flex h-[34px] items-center rounded-[17px] bg-[rgba(255,149,0,0.14)] px-[14px]">
-            <p className="font-['Pretendard'] text-[13px] font-medium whitespace-nowrap text-[#1f2430]">
-              프라이빗 탐구 교육 네트워크
+          <div className="flex h-[34px] items-center rounded-[17px] bg-accent-soft px-[14px]">
+            <p className="font-['Pretendard'] text-[13px] font-medium whitespace-nowrap text-text-primary">
+              학생부종합전형의 새로운 기준
             </p>
           </div>
 
-          <h1 className="font-['Pretendard'] text-[36px] leading-[46px] font-bold text-[#1f2430] sm:text-[44px] sm:leading-[56px] lg:text-[54px] lg:leading-[72px]">
-            탐구의 시작부터 성장까지
+          <h1 className="font-['Pretendard'] text-[36px] leading-[46px] font-bold text-text-primary sm:text-[44px] sm:leading-[56px] lg:text-[54px] lg:leading-[72px]">
+            학종의 진짜 가치를
             <br />
-            신뢰할 수 있는 연결
+            실현하다.
           </h1>
 
-          <p className="font-['Pretendard'] text-[17px] leading-[28px] text-[#667085] lg:text-[19px] lg:leading-[32px]">
-            탐구로는 학원·학교, 학생과 학부모, 검증된 멘토를 연결하는
+          <p className="font-['Pretendard'] text-[17px] leading-[28px] text-text-secondary lg:text-[19px] lg:leading-[32px]">
+            자료로 이해하고, 합격자 멘토의 경험으로 완성하는
             <br className="hidden sm:block" />
-            프라이빗 탐구 교육 플랫폼입니다.
+            학생부종합전형 실전 플랫폼 탐구로입니다.
           </p>
 
           <div className="flex flex-wrap items-center gap-[14px] pt-[10px]">
             <a
-              href="#contact"
-              className="flex h-[52px] items-center justify-center rounded-[14px] bg-[#1f2430] px-[28px] font-['Pretendard'] text-[15px] font-medium whitespace-nowrap text-white transition-opacity hover:opacity-90"
+              href="#hakjong-a-to-z"
+              className="flex h-[52px] items-center justify-center rounded-[14px] bg-action-primary px-[28px] font-['Pretendard'] text-[15px] font-medium whitespace-nowrap text-text-inverse transition-opacity hover:opacity-90"
             >
-              학원·학교 제휴 문의
+              학종 A to Z 둘러보기
             </a>
             <a
-              href="#contact"
-              className="flex h-[52px] items-center justify-center rounded-[14px] border border-[#d9d7cf] bg-white px-[28px] font-['Pretendard'] text-[15px] font-medium whitespace-nowrap text-[#1f2430] transition-colors hover:bg-[#faf9f6]"
+              href="#mentoring"
+              className="flex h-[52px] items-center justify-center rounded-[14px] border border-border-strong bg-surface px-[28px] font-['Pretendard'] text-[15px] font-medium whitespace-nowrap text-text-primary transition-colors hover:bg-surface-hover"
             >
-              멘토 등록 문의
+              멘토링 알아보기
             </a>
           </div>
 
-          <p className="font-['Pretendard'] text-[14px] leading-[21px] text-[#667085]">
-            학생과 학부모는 소속 교육기관의 안내를 통해 이용합니다.
+          <p className="font-['Pretendard'] text-[14px] leading-[21px] text-text-secondary">
+            학종의 모든 것부터 심층 탐구 활동까지, 한 곳에서.
           </p>
         </div>
 
         {/* Phone column */}
         <div className="relative mx-auto flex w-full max-w-[300px] items-center justify-center lg:mx-0 lg:h-[646px] lg:w-[536px] lg:max-w-none lg:items-start lg:justify-start">
-          {/* Hero accent blob */}
-          <div className="absolute hidden rounded-[40px] bg-[rgba(255,149,0,0.14)] lg:top-[38px] lg:left-0 lg:block lg:h-[490px] lg:w-[480px]" />
+          {/* Soft brand halo behind the phones */}
+          <div className="hero-phone-glow pointer-events-none absolute hidden lg:top-[16px] lg:left-[-34px] lg:block lg:h-[570px] lg:w-[590px]" />
 
           {/* Phone · 학생 홈 */}
           <div className="relative z-10 lg:absolute lg:top-0 lg:left-[27px]">

@@ -1,78 +1,62 @@
 import type { JSX } from "react";
 
-const PRINCIPLES = [
+const MATERIALS = [
   {
-    number: "01",
-    title: "초대 기반의 신뢰",
-    description:
-      "교육기관이 안내한 사용자와 검증된 멘토가 안전한 환경에서 연결됩니다.",
+    title: "학종입시개론",
+    description: "학종의 모든 것, 학종에 대한 차별화된 접근",
   },
   {
-    number: "02",
-    title: "교육기관과 함께 운영",
-    description:
-      "학원·학교의 교육 경험을 해치지 않고 학생의 탐구 여정을 확장합니다.",
+    title: "교세특 워크북",
+    description: "워크북을 따라가면 교세특이 뚝딱, 매월 추가되는 워크북",
   },
   {
-    number: "03",
-    title: "역할에 맞는 경험",
-    description: "학생, 학부모, 멘토가 각자 필요한 정보와 소통에 집중합니다.",
+    title: "탐구로 노하우",
+    description: "탐구를 하기 위한 합격자의 실무 노하우",
   },
   {
-    number: "04",
-    title: "탐구와 멘토링의 연결",
-    description:
-      "자료 탐색과 멘토 소통이 하나의 성장 경험으로 이어집니다.",
+    title: "학생부 케이스 스터디",
+    description: "좋은 세특과 나쁜 세특을 보면 정답이 보인다!",
   },
 ];
 
 export default function Principles(): JSX.Element {
   return (
     <section
-      id="principles"
-      className="bg-white px-[20px] md:px-[80px]"
+      id="hakjong-a-to-z"
+      className="bg-surface px-[20px] md:px-[80px]"
     >
-      <div className="mx-auto max-w-[1600px] border-t border-[#e8e5db]" />
-      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-x-[80px] gap-y-[56px] py-[101px] md:py-[146px] lg:grid-cols-[2fr_3fr]">
-        {/* Left column */}
-        <div className="relative flex flex-col gap-[24px] border-l-[10px] border-[rgba(255,149,0,0.14)] pl-[30px]">
-          <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-[#ff9500]">
-            PRINCIPLES
-          </p>
-          <h2 className="font-['Pretendard'] text-[32px] leading-[42px] font-bold text-[#1f2430] md:text-[44px] md:leading-[60px]">
-            신뢰를 설계하는
+      <div className="mx-auto max-w-[1600px] border-t border-border-default" />
+      <div className="mx-auto max-w-[1600px] py-[80px] md:py-[120px]">
+        <div className="mb-[64px] flex flex-col items-start gap-[24px]">
+          <div className="flex h-[34px] items-center gap-[7px] rounded-full bg-accent-soft px-[14px]">
+            <span className="size-[7px] rounded-full bg-accent" aria-hidden="true" />
+            <p className="font-['Pretendard'] text-[13px] font-medium whitespace-nowrap text-text-primary">
+              학종 A to Z
+            </p>
+          </div>
+          <h2 className="max-w-[900px] font-['Pretendard'] text-[32px] leading-[42px] font-bold text-text-primary md:text-[38px] md:leading-[52px]">
+            구독을 통해 열람하는 학종에 대한 모든 것,
             <br />
-            네 가지 원칙
+            학종 A to Z
           </h2>
-          <p className="font-['Pretendard'] text-[16px] leading-[27px] text-[#667085] md:text-[17px] md:leading-[29px]">
-            프라이빗 서비스에 필요한 것은
-            <br />
-            더 많은 기능보다 더 높은 신뢰입니다.
-          </p>
-          <p className="font-['Pretendard'] pt-[4px] text-[72px] leading-none font-bold whitespace-nowrap text-[rgba(255,149,0,0.14)] md:text-[112px]">
-            TRUST
-          </p>
         </div>
 
-        {/* Right column */}
-        <div className="flex flex-col">
-          {PRINCIPLES.map((principle) => (
-            <div
-              key={principle.number}
-              className="flex flex-col gap-[10px] border-t border-[#e8e5db] py-[64px] sm:flex-row sm:items-start sm:gap-[24px]"
-            >
-              <p className="font-['Pretendard'] w-[40px] shrink-0 text-[18px] font-bold text-[#ff9500]">
-                {principle.number}
-              </p>
-              <div className="flex min-w-0 flex-1 flex-col gap-[10px] sm:flex-row sm:items-start sm:gap-[24px]">
-                <h3 className="font-['Pretendard'] shrink-0 text-[22px] leading-[31px] font-bold text-[#1f2430] sm:w-[210px]">
-                  {principle.title}
+        <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 xl:grid-cols-4">
+          {MATERIALS.map((material, index) => (
+              <div
+                key={material.title}
+                className="flex min-h-[248px] flex-col rounded-[20px] border border-border-default bg-surface px-[26px] py-[28px] md:p-[30px]"
+              >
+                <span className="mb-[30px] font-['Pretendard'] text-[24px] leading-none font-semibold tracking-[-0.02em] text-accent" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-['Pretendard'] text-[21px] leading-[31px] font-bold text-text-primary">
+                  {material.title}
                 </h3>
-                <p className="font-['Pretendard'] min-w-0 flex-1 text-[15px] leading-[25px] text-[#667085]">
-                  {principle.description}
+                <p className="mt-[12px] font-['Pretendard'] text-[15px] leading-[25px] text-text-secondary">
+                  {material.description}
                 </p>
               </div>
-            </div>
           ))}
         </div>
       </div>

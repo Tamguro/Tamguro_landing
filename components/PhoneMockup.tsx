@@ -22,27 +22,27 @@ const VARIANT_IMAGE: Record<
   { src: string; width: number; height: number }
 > = {
   "student-home": {
-    src: "/images/phones/student-home.png",
+    src: "/images/phones/student-home-cutout-v3.png",
     width: 342,
     height: 646,
   },
   "parent-home": {
-    src: "/images/phones/parent-home.png",
+    src: "/images/phones/parent-home-cutout-v3.png",
     width: 342,
     height: 646,
   },
   "student-app-experience": {
-    src: "/images/phones/student-app-experience.png",
+    src: "/images/phones/student-app-experience-cutout-v3.png",
     width: 232,
     height: 412,
   },
   "parent-app-experience": {
-    src: "/images/phones/parent-app-experience.png",
+    src: "/images/phones/parent-app-experience-cutout-v3.png",
     width: 232,
     height: 412,
   },
   "mentor-app-experience": {
-    src: "/images/phones/mentor-app-experience.png",
+    src: "/images/phones/mentor-app-experience-cutout-v3.png",
     width: 232,
     height: 412,
   },
@@ -69,7 +69,7 @@ export default function PhoneMockup({
       width={frameWidth}
       height={frameHeight}
       priority={priority}
-      className="h-auto w-full"
+      className="phone-mockup h-auto w-full"
       style={{ width: frameWidth, height: frameHeight }}
     />
   );

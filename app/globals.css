@@ -1,25 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Figma primitives: TG · Color Primitives */
+  --palette-white: #ffffff;
+  --palette-ink: #1f2430;
+  --palette-slate: #667085;
+  --palette-line: #e8e5db;
+  --palette-line-strong: #d9d7cf;
+  --palette-canvas-warm: #fffdf5;
+  --palette-brand-blue: #319bff;
+  --palette-brand-blue-28: #319bff38;
+  --palette-brand-blue-18: #319bff2e;
+  --palette-brand-blue-transparent: #319bff00;
+  --palette-shadow-navy-18: #0d0f172e;
+
+  /* Semantic application tokens */
+  --background: var(--palette-white);
+  --foreground: var(--palette-ink);
+  --surface: var(--palette-white);
+  --surface-hover: var(--palette-canvas-warm);
+  --accent: var(--palette-brand-blue);
+  --accent-soft: var(--palette-brand-blue-28);
+  --hero-glow-core: var(--palette-brand-blue-18);
+  --hero-glow-edge: var(--palette-brand-blue-transparent);
+  --text-primary: var(--palette-ink);
+  --text-secondary: var(--palette-slate);
+  --text-inverse: var(--palette-white);
+  --border-default: var(--palette-line);
+  --border-strong: var(--palette-line-strong);
+  --action-primary: var(--palette-ink);
+  --shadow-phone: var(--palette-shadow-navy-18);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-inverse: var(--text-inverse);
+  --color-border-default: var(--border-default);
+  --color-border-strong: var(--border-strong);
+  --color-action-primary: var(--action-primary);
   --font-sans: var(--font-pretendard), sans-serif;
   --font-mono: monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+.phone-mockup {
+  filter: drop-shadow(0 18px 22px var(--shadow-phone));
+}
+
+.hero-phone-glow {
+  background: radial-gradient(
+    ellipse at center,
+    var(--hero-glow-core) 0%,
+    var(--hero-glow-core) 28%,
+    var(--hero-glow-edge) 72%
+  );
+  filter: blur(18px);
 }

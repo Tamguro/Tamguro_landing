@@ -2,30 +2,26 @@ import type { JSX } from "react";
 
 export default function Footer(): JSX.Element {
   return (
-    <footer className="bg-white px-[20px] md:px-[80px]">
-      <div className="mx-auto max-w-[1600px] border-t border-[#e8e5db]" />
-      <div className="mx-auto flex max-w-[1600px] flex-col gap-[32px] py-[78px] md:flex-row md:items-start md:justify-between md:py-[106px]">
-        <div className="flex flex-col gap-[8px]">
-          <div className="flex items-center gap-[12px]">
-            <p className="font-['Pretendard'] text-[28px] font-bold whitespace-nowrap text-[#ff9500]">
+    <footer className="bg-surface px-[20px] md:px-[80px]">
+      <div className="mx-auto flex max-w-[1600px] flex-col gap-[32px] py-[48px]">
+        <div className="h-px w-full bg-border-default" />
+
+        <div className="flex items-start">
+          <div className="flex items-center gap-[8px] font-['Pretendard'] font-bold whitespace-nowrap">
+            <span className="text-[32px] leading-[38px] tracking-[-0.015em] text-accent">
               TG
-            </p>
-            <p className="font-['Pretendard'] text-[19px] font-bold whitespace-nowrap text-[#1f2430]">
+            </span>
+            <span className="text-[18px] leading-[24px] text-text-primary">
               탐구로
-            </p>
+            </span>
           </div>
-          <p className="font-['Pretendard'] text-[13px] whitespace-nowrap text-[#667085]">
-            신뢰할 수 있는 탐구 교육의 연결
-          </p>
         </div>
 
-        <div className="flex flex-col gap-[8px] md:items-end">
-          <p className="font-['Pretendard'] text-[13px] font-medium md:whitespace-nowrap text-[#1f2430]">
-            브랜드 &nbsp;&nbsp; 차별점 &nbsp;&nbsp; 앱 화면 &nbsp;&nbsp; 문의
-          </p>
-          <p className="font-['Pretendard'] text-[12px] md:whitespace-nowrap text-[#667085]">
-            학생과 학부모는 소속 교육기관의 안내를 통해 이용합니다.
-          </p>
+        <div className="flex flex-col gap-[8px] font-['Pretendard'] text-[13px] leading-[20px] text-text-secondary">
+          <p>주식회사 탐구로 · 대표 서정우 · 사업자등록번호 248-87-04012</p>
+          <p>사업장 주소: 서울특별시 성동구 행당로17길 1-57</p>
+          <p>Contact: tamguro.inc@gmail.com</p>
+          <p>© 2026 탐구로. All rights reserved.</p>
         </div>
       </div>
     </footer>
