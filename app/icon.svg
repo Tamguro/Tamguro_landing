@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    :root {
+      --tg-icon-surface: #d2e9ff;
+      --tg-icon-ink: #1f2430;
+    }
+  </style>
+  <rect width="64" height="64" rx="22.4" fill="var(--tg-icon-surface)" />
+  <text
+    x="32"
+    y="32"
+    fill="var(--tg-icon-ink)"
+    font-family="Pretendard, Arial, sans-serif"
+    font-size="22.4"
+    font-weight="700"
+    text-anchor="middle"
+    dominant-baseline="central"
+  >TG</text>
+</svg>
