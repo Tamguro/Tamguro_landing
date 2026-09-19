@@ -10,7 +10,7 @@ export type PhoneMockupVariant =
 
 export interface PhoneMockupProps {
   variant: PhoneMockupVariant;
-  /** "full" = Hero (270px frame), "compact" = App Experience (176px frame) */
+  /** "full" = Hero (270px frame), "compact" = App Experience (264px frame) */
   size?: "full" | "compact";
   priority?: boolean;
 }
@@ -50,8 +50,13 @@ const VARIANT_IMAGE: Record<
 
 const FRAME_WIDTH = {
   full: 270,
-  compact: 176,
+  compact: 264,
 } as const;
+
+// App Experience exports include the drop-shadow canvas around the phone.
+// Scaling that canvas by the same factor as the 176px -> 264px frame keeps
+// the visible device at the exact size used in Figma.
+const COMPACT_SOURCE_FRAME_WIDTH = 176;
 
 export default function PhoneMockup({
   variant,
@@ -60,17 +65,23 @@ export default function PhoneMockup({
 }: PhoneMockupProps): JSX.Element {
   const image = VARIANT_IMAGE[variant];
   const frameWidth = FRAME_WIDTH[size];
-  const frameHeight = Math.round((image.height / image.width) * frameWidth);
+  const renderedWidth =
+    size === "compact"
+      ? Math.round(image.width * (frameWidth / COMPACT_SOURCE_FRAME_WIDTH))
+      : frameWidth;
+  const renderedHeight = Math.round(
+    (image.height / image.width) * renderedWidth,
+  );
 
   return (
     <Image
       src={image.src}
       alt=""
-      width={frameWidth}
-      height={frameHeight}
+      width={renderedWidth}
+      height={renderedHeight}
       priority={priority}
-      className="phone-mockup h-auto w-full"
-      style={{ width: frameWidth, height: frameHeight }}
+      className="phone-mockup h-auto max-w-full"
+      style={{ width: renderedWidth }}
     />
   );
 }

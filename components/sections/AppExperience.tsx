@@ -33,13 +33,13 @@ export default function AppExperience(): JSX.Element {
   return (
     <section
       id="app-experience"
-      className="bg-surface px-[20px] md:px-[80px]"
+      className="bg-surface px-[20px] md:px-[80px] lg:px-[120px]"
     >
-      <div className="mx-auto max-w-[1600px] border-t border-border-default" />
-      <div className="mx-auto max-w-[1600px] py-[120px] md:py-[192px]">
-        <div className="flex flex-col gap-[16px] pb-[120px] lg:flex-row lg:items-start lg:justify-between lg:gap-[80px]">
-          <div className="flex flex-col gap-[16px]">
-            <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-accent">
+      <div className="mx-auto max-w-[1200px] border-t border-border-default" />
+      <div className="mx-auto max-w-[1200px] pt-[120px] lg:pt-0">
+        <div className="flex flex-col gap-[16px] pb-[120px] lg:relative lg:h-[360px] lg:gap-0 lg:pb-0">
+          <div className="flex flex-col gap-[16px] lg:absolute lg:top-[76px] lg:left-0 lg:gap-[22px]">
+            <p className="font-['Pretendard'] text-[13px] leading-[20px] font-bold whitespace-nowrap text-accent">
               APP EXPERIENCE
             </p>
             <h2 className="font-['Pretendard'] max-w-[520px] text-[32px] leading-[42px] font-bold text-text-primary md:text-[42px] md:leading-[56px]">
@@ -48,41 +48,48 @@ export default function AppExperience(): JSX.Element {
               같은 목표를 향해
             </h2>
           </div>
-          <p className="font-['Pretendard'] max-w-[450px] text-[16px] leading-[27px] text-text-secondary md:text-[17px] md:leading-[29px] lg:pt-[44px]">
+          <p className="font-['Pretendard'] max-w-[450px] text-[16px] leading-[27px] text-text-secondary md:text-[17px] md:leading-[29px] lg:absolute lg:top-[130px] lg:left-[590px] lg:max-w-[600px]">
             학생, 학부모, 멘토는 서로 다른 화면을 사용하지만
             <br className="hidden md:block" />
             하나의 탐구 성장 경험으로 연결됩니다.
           </p>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col lg:gap-[63px] lg:pb-[63px]">
           {ROLE_STORIES.map((story) => (
             <div
               key={story.number}
-              className={`flex flex-col items-center gap-[40px] border-t border-border-default py-[108px] lg:flex-row lg:items-start lg:justify-between lg:gap-[80px] ${
-                story.reverse ? "lg:flex-row-reverse" : ""
-              }`}
+              className="relative flex flex-col items-center gap-[72px] border-b border-border-default py-[128px] lg:h-[657px] lg:gap-0 lg:py-0"
             >
-              <div className="flex max-w-[430px] flex-col items-center gap-[12px] text-center lg:flex-row lg:items-start lg:gap-[36px] lg:text-left">
-                <p className="font-['Pretendard'] shrink-0 text-[54px] leading-[66px] font-bold text-accent">
+              <div
+                className={`flex max-w-[430px] flex-col items-center text-center lg:absolute lg:top-[170px] lg:flex-row lg:items-start lg:gap-[36px] lg:text-left ${
+                  story.reverse ? "lg:left-[500px]" : "lg:left-0"
+                }`}
+              >
+                <p className="font-['Pretendard'] shrink-0 text-[54px] leading-[66px] font-bold text-accent lg:w-[82px]">
                   {story.number}
                 </p>
-                <div className="flex flex-col items-center gap-[12px] text-center lg:items-start lg:pt-[4px] lg:text-left">
+                <div className="flex flex-col items-center text-center lg:items-start lg:pt-[10px] lg:text-left">
                   <p className="font-['Pretendard'] text-[14px] font-bold whitespace-nowrap text-accent">
                     {story.role}
                   </p>
-                  <h3 className="font-['Pretendard'] text-[26px] leading-[38px] font-bold text-text-primary md:text-[30px] md:leading-[42px]">
+                  <h3 className="font-['Pretendard'] mt-[19px] text-[26px] leading-[38px] font-bold text-text-primary md:text-[30px] md:leading-[42px]">
                     {story.title}
                   </h3>
-                  <p className="font-['Pretendard'] text-[15px] leading-[26px] text-text-secondary md:text-[16px] md:leading-[28px]">
+                  <p className="font-['Pretendard'] mt-[16px] text-[15px] leading-[26px] text-text-secondary md:text-[16px] md:leading-[28px]">
                     {story.description}
                   </p>
                 </div>
               </div>
 
-              <div className="relative flex shrink-0 items-center justify-center">
-                <div className="absolute size-[230px] rounded-full bg-accent-soft blur-3xl" />
-                <div className="relative">{story.phone}</div>
+              <div
+                className={`relative flex size-[280px] shrink-0 items-center justify-center rounded-full bg-accent-soft lg:absolute lg:top-[137.5px] lg:size-[345px] ${
+                  story.reverse ? "lg:left-[17.5px]" : "lg:right-[17.5px]"
+                }`}
+              >
+                <div className="relative w-[280px] max-w-[calc(100vw-40px)] lg:absolute lg:top-[-85.5px] lg:left-[-1.5px] lg:w-[348px] lg:max-w-none">
+                  {story.phone}
+                </div>
               </div>
             </div>
           ))}
