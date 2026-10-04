@@ -51,8 +51,8 @@ export default function Contact(): JSX.Element {
       </div>
 
       <p className="mx-auto max-w-[980px] px-[8px] pt-[32px] pb-[96px] text-center text-[13px] leading-[1.7] text-text-secondary md:pb-[140px]">
-        탐구로는 초중고등교육법을 준수합니다. ‘학종 A to Z’ 자료는 탐구로 입시
-        연구팀이 자체 개발한 가상 생기부입니다.
+        탐구로는 초중고등교육법을 준수합니다. ‘학종 A to Z’ 자료는 탐구로
+        연구팀이 자체 제작한 자료입니다.
       </p>
     </section>
   );
