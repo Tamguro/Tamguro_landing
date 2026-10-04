@@ -167,3 +167,66 @@ body {
     }
   }
 }
+
+/* ── App rail: vertical scroll → horizontal 01 → 02 → 03.
+   JS writes --e (eased step, 0 → 2) on the section and --d / --ad (signed /
+   absolute distance from the current step) on each panel; CSS does the rest. */
+.app-rail-halo {
+  transform: translate(-50%, -50%);
+}
+
+.app-rail-fill {
+  transform: scaleX(0);
+  transition: transform 300ms ease;
+}
+
+/* Small screens only: the dot fills when its card is in view. On desktop the
+   fill follows --e continuously, so this must not override it there. */
+@media (max-width: 1023.98px) {
+  .app-rail-fill[data-active="true"] {
+    transform: scaleX(1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-rail-track {
+    transform: translate3d(calc(var(--e) * -100% / 3), 0, 0);
+    will-change: transform;
+  }
+
+  .app-rail-fill {
+    transition: none;
+    transform: scaleX(clamp(0, calc(var(--e) - var(--i) + 1), 1));
+  }
+
+  .app-rail-copy {
+    opacity: calc(1 - var(--ad) * 0.85);
+  }
+
+  /* the big number outruns its panel: parallax */
+  .app-rail-number {
+    transform: translate3d(calc(var(--d) * -180px), 0, 0);
+  }
+
+  .app-rail-halo {
+    transform: translate(-50%, -50%) scale(calc(1 - var(--ad) * 0.4));
+  }
+
+  /* phones turn into the direction of travel and settle face-on */
+  .app-rail-phone {
+    transform: translate3d(calc(var(--d) * -120px), 0, 0)
+      rotateY(calc(var(--d) * 24deg)) scale(calc(1 - var(--ad) * 0.14));
+    will-change: transform;
+  }
+}
+
+@media (min-width: 1024px) and (prefers-reduced-motion: reduce) {
+  .app-rail-number,
+  .app-rail-phone {
+    transform: none;
+  }
+
+  .app-rail-halo {
+    transform: translate(-50%, -50%);
+  }
+}

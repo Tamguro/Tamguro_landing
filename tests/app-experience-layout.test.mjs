@@ -10,20 +10,24 @@ const phoneMockupPath = new URL(
   "../components/PhoneMockup.tsx",
   import.meta.url,
 );
+const globalsPath = new URL("../app/globals.css", import.meta.url);
 
-test("App Experience pins one phone on desktop and stacks phones below lg", async () => {
-  const [appExperience, phoneMockup] = await Promise.all([
+test("App Experience pins a stage and slides 01 → 03 horizontally on desktop", async () => {
+  const [appExperience, phoneMockup, globals] = await Promise.all([
     readFile(appExperiencePath, "utf8"),
     readFile(phoneMockupPath, "utf8"),
+    readFile(globalsPath, "utf8"),
   ]);
 
   assert.match(phoneMockup, /compact:\s*264/);
-  // desktop: sticky phone column driven by the step crossing mid-viewport
-  assert.match(appExperience, /sticky top-\[calc\(50vh-300px\)\]/);
-  assert.match(appExperience, /rootMargin: "-50% 0px -50% 0px"/);
-  // small screens: each step renders its own phone inline
-  assert.match(appExperience, /className="relative lg:hidden"/);
-  assert.match(appExperience, /lg:size-\[345px\]/);
+  // tall runway + sticky stage on desktop
+  assert.match(appExperience, /lg:h-\[340vh\]/);
+  assert.match(appExperience, /lg:sticky/);
+  // three panels side by side, track translated by the eased step
+  assert.match(appExperience, /lg:w-\[300%\]/);
+  assert.match(globals, /translate3d\(calc\(var\(--e\) \* -100% \/ 3\)/);
+  // small screens fall back to a native swipe carousel
+  assert.match(appExperience, /snap-x snap-mandatory/);
 });
 
 test("App Experience accent halos are crisp rather than blurred", async () => {
