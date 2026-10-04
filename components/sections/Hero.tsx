@@ -1,66 +1,69 @@
 import type { JSX } from "react";
 import PhoneMockup from "@/components/PhoneMockup";
+import { PILL_PRIMARY, PILL_SECONDARY } from "@/lib/ui";
 
 export default function Hero(): JSX.Element {
   return (
     <section
       id="hero"
-      className="overflow-hidden bg-surface px-[20px] py-[90px] md:px-[80px] md:py-[134px]"
+      className="overflow-hidden bg-surface px-[12px] pt-[72px] pb-[12px] md:pt-[112px]"
     >
-      <div className="mx-auto flex max-w-[1600px] flex-col items-start gap-[56px] lg:flex-row lg:items-center lg:justify-between lg:gap-[40px]">
-        {/* Text column */}
-        <div className="flex max-w-[650px] flex-col items-start gap-[24px]">
-          <div className="flex h-[34px] items-center rounded-[17px] bg-accent-soft px-[14px]">
-            <p className="font-['Pretendard'] text-[13px] font-medium whitespace-nowrap text-text-primary">
-              학생부종합전형의 새로운 기준
-            </p>
-          </div>
+      {/* Apple-style centered statement: one message, two actions */}
+      <div className="mx-auto flex max-w-[980px] flex-col items-center px-[8px] text-center">
+        <p
+          className="rise text-[15px] font-semibold text-accent md:text-[17px]"
+          style={{ animationDelay: "0ms" }}
+        >
+          학생부종합전형의 새로운 기준
+        </p>
 
-          <h1 className="font-['Pretendard'] text-[36px] leading-[46px] font-bold text-text-primary sm:text-[44px] sm:leading-[56px] lg:text-[54px] lg:leading-[72px]">
-            학종의 진짜 가치를
-            <br />
-            실현하다.
-          </h1>
+        <h1 className="mt-[16px] text-[44px] leading-[1.12] font-bold tracking-[-0.04em] text-text-primary sm:text-[64px] lg:text-[84px]">
+          <span className="rise block" style={{ animationDelay: "80ms" }}>
+            학종의 <span className="highlighter highlighter-sweep">진짜</span>{" "}
+            가치를
+          </span>
+          <span className="rise block" style={{ animationDelay: "160ms" }}>
+            실현하다<span className="text-accent">.</span>
+          </span>
+        </h1>
 
-          <p className="font-['Pretendard'] text-[17px] leading-[28px] text-text-secondary lg:text-[19px] lg:leading-[32px]">
-            자료로 이해하고, 합격자 멘토의 경험으로 완성하는
-            <br className="hidden sm:block" />
-            학생부종합전형 실전 플랫폼 탐구로입니다.
-          </p>
+        <p
+          className="rise mt-[24px] max-w-[640px] text-[19px] leading-[1.5] tracking-[-0.01em] text-text-secondary md:text-[24px]"
+          style={{ animationDelay: "260ms" }}
+        >
+          자료로 이해하고, 합격자의 경험으로 완성하는
+          <br className="hidden sm:block" /> 학생부종합전형 실전 플랫폼.
+        </p>
 
-          <div className="flex flex-wrap items-center gap-[14px] pt-[10px]">
-            <a
-              href="#hakjong-a-to-z"
-              className="flex h-[52px] items-center justify-center rounded-[14px] bg-action-primary px-[28px] font-['Pretendard'] text-[15px] font-medium whitespace-nowrap text-text-inverse transition-opacity hover:opacity-90"
-            >
-              학종 A to Z 둘러보기
-            </a>
-            <a
-              href="#mentoring"
-              className="flex h-[52px] items-center justify-center rounded-[14px] border border-border-strong bg-surface px-[28px] font-['Pretendard'] text-[15px] font-medium whitespace-nowrap text-text-primary transition-colors hover:bg-surface-hover"
-            >
-              멘토링 알아보기
-            </a>
-          </div>
-
-          <p className="font-['Pretendard'] text-[14px] leading-[21px] text-text-secondary">
-            학종의 모든 것부터 심층 탐구 활동까지, 한 곳에서.
-          </p>
+        <div
+          className="rise mt-[36px] flex flex-wrap items-center justify-center gap-[12px]"
+          style={{ animationDelay: "340ms" }}
+        >
+          <a href="#hakjong-a-to-z" className={PILL_PRIMARY}>
+            학종 A to Z 둘러보기
+          </a>
+          <a href="#mentoring" className={PILL_SECONDARY}>
+            멘토링 알아보기
+          </a>
         </div>
+      </div>
 
-        {/* Phone column */}
-        <div className="relative mx-auto flex w-full max-w-[300px] items-center justify-center lg:mx-0 lg:h-[646px] lg:w-[536px] lg:max-w-none lg:items-start lg:justify-start">
-          {/* Soft brand halo behind the phones */}
-          <div className="hero-phone-glow pointer-events-none absolute hidden lg:top-[16px] lg:left-[-34px] lg:block lg:h-[570px] lg:w-[590px]" />
+      {/* Toss/Apple-style product card: both phones shown whole, sized by content */}
+      <div className="expand-on-view relative mx-auto mt-[64px] flex max-w-[1416px] justify-center overflow-hidden rounded-[28px] bg-wash px-[20px] pt-[56px] pb-[64px] md:mt-[88px] md:rounded-[40px] md:pt-[80px] md:pb-[96px]">
+        {/* crisp halo behind the phones */}
+        <div
+          aria-hidden="true"
+          className="absolute top-1/2 left-1/2 size-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-soft md:size-[520px]"
+        />
 
-          {/* Phone · 학생 홈 */}
-          <div className="relative z-10 lg:absolute lg:top-0 lg:left-[27px]">
-            <PhoneMockup variant="student-home" size="full" priority />
+        <div className="relative flex items-start">
+          {/* 학생 홈 — front */}
+          <div className="relative z-10 w-[260px] md:w-auto">
+            <PhoneMockup variant="student-home" size="large" priority />
           </div>
-
-          {/* Phone · 학부모 홈 */}
-          <div className="absolute z-20 hidden lg:top-[72px] lg:left-[266px] lg:block">
-            <PhoneMockup variant="parent-home" size="full" />
+          {/* 학부모 홈 — behind, offset right and down (hidden on small screens) */}
+          <div className="relative mt-[96px] -ml-[72px] hidden md:block">
+            <PhoneMockup variant="parent-home" size="large" />
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
+import Statement from "@/components/sections/Statement";
 import Principles from "@/components/sections/Principles";
 import AppExperience from "@/components/sections/AppExperience";
 import ForEveryRole from "@/components/sections/ForEveryRole";
@@ -62,6 +63,7 @@ export default function Home() {
       <main>
         <Header />
         <Hero />
+        <Statement />
         <Principles />
         <AppExperience />
         <ForEveryRole />

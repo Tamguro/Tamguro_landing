@@ -12,6 +12,10 @@
   --palette-brand-blue-28: #319bff38;
   --palette-brand-blue-18: #319bff2e;
   --palette-brand-blue-transparent: #319bff00;
+  --palette-brand-blue-wash: #e6f3ff; /* app: AppColors.paymentNotice */
+  --palette-soft-surface: #f5f5f5; /* app: AppColors.softSurface */
+  --palette-white-68: #ffffffad;
+  --palette-white-14: #ffffff24;
   --palette-shadow-navy-18: #0d0f172e;
 
   /* Semantic application tokens */
@@ -19,15 +23,20 @@
   --foreground: var(--palette-ink);
   --surface: var(--palette-white);
   --surface-hover: var(--palette-canvas-warm);
+  --surface-inverse: var(--palette-ink);
+  --surface-muted: var(--palette-soft-surface);
+  --paper: var(--palette-canvas-warm);
+  --wash: var(--palette-brand-blue-wash);
   --accent: var(--palette-brand-blue);
   --accent-soft: var(--palette-brand-blue-28);
-  --hero-glow-core: var(--palette-brand-blue-18);
-  --hero-glow-edge: var(--palette-brand-blue-transparent);
+  --highlight: var(--palette-brand-blue-28);
   --text-primary: var(--palette-ink);
   --text-secondary: var(--palette-slate);
   --text-inverse: var(--palette-white);
+  --text-inverse-muted: var(--palette-white-68);
   --border-default: var(--palette-line);
   --border-strong: var(--palette-line-strong);
+  --border-inverse: var(--palette-white-14);
   --action-primary: var(--palette-ink);
   --shadow-phone: var(--palette-shadow-navy-18);
 }
@@ -37,13 +46,19 @@
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-surface-hover: var(--surface-hover);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-surface-muted: var(--surface-muted);
+  --color-paper: var(--paper);
+  --color-wash: var(--wash);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-inverse: var(--text-inverse);
+  --color-text-inverse-muted: var(--text-inverse-muted);
   --color-border-default: var(--border-default);
   --color-border-strong: var(--border-strong);
+  --color-border-inverse: var(--border-inverse);
   --color-action-primary: var(--action-primary);
   --font-sans: var(--font-pretendard), sans-serif;
   --font-mono: monospace;
@@ -52,18 +67,103 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .phone-mockup {
   filter: drop-shadow(0 18px 22px var(--shadow-phone));
 }
 
-.hero-phone-glow {
-  background: radial-gradient(
-    ellipse at center,
-    var(--hero-glow-core) 0%,
-    var(--hero-glow-core) 28%,
-    var(--hero-glow-edge) 72%
-  );
-  filter: blur(18px);
+/* ── Highlighter: a marker stroke under key words (hero headline, contact). */
+.highlighter {
+  background-image: linear-gradient(var(--highlight), var(--highlight));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 42%;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* ── Motion: page-load rise for hero, scroll-driven reveals elsewhere.
+   Everything renders in its final state when motion is reduced or the
+   browser lacks scroll timelines. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes sweep {
+  from {
+    background-size: 0% 42%;
+  }
+}
+
+@keyframes expand {
+  from {
+    transform: scale(0.94);
+  }
+}
+
+@keyframes ink-fill {
+  from {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes draw {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .highlighter-sweep {
+    animation: sweep 700ms cubic-bezier(0.6, 0, 0.2, 1) 650ms both;
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+
+    /* Toss-style media card: grows to full size as it enters the viewport. */
+    .expand-on-view {
+      animation: expand linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+
+    /* Toss-style statement: the sentence fills with ink as you scroll. */
+    .ink-fill-on-view {
+      color: transparent;
+      background-image: linear-gradient(
+        90deg,
+        var(--text-primary) 50%,
+        var(--border-strong) 50%
+      );
+      background-size: 200% 100%;
+      background-position: 0 0;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: ink-fill linear both;
+      animation-timeline: view();
+      animation-range: entry 60% cover 55%;
+    }
+
+    .draw-on-view {
+      transform-origin: left center;
+      animation: draw linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 45%;
+    }
+  }
 }

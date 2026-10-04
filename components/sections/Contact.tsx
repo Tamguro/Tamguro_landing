@@ -1,80 +1,59 @@
-"use client";
-
 import type { JSX } from "react";
-import toast from "react-hot-toast";
+import ReleaseButton from "@/components/ReleaseButton";
+import { PILL_PRIMARY } from "@/lib/ui";
 
-const RELEASE_MESSAGE = "아직 출시 기간입니다. 조금만 기다려 주세요!";
+const OFFERS = [
+  {
+    eyebrow: "학종 A to Z",
+    title: "매월 쌓이는 실전 자료를\n지금 확인하세요.",
+    action: "자료 구독하기",
+    tone: "bg-wash",
+  },
+  {
+    eyebrow: "멘토링",
+    title: "직접 해본 합격자에게\n실전 답을 얻으세요.",
+    action: "멘토 찾아보기",
+    tone: "bg-surface-muted",
+  },
+];
 
 export default function Contact(): JSX.Element {
   return (
-    <section
-      id="contact"
-      className="bg-surface px-[20px] md:px-[80px]"
-    >
-      <div className="mx-auto max-w-[1600px] border-t border-border-default" />
-      <div className="mx-auto max-w-[1600px] py-[112px] md:py-[185px]">
-        <div className="flex flex-col gap-[40px] rounded-[32px] bg-accent-soft p-[40px] md:p-[72px] lg:flex-row lg:items-stretch lg:gap-0">
-          {/* Intro */}
-          <div className="flex flex-col justify-center gap-[16px] lg:w-[420px] lg:pr-[40px]">
-            <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-accent">
-              START WITH TAMGURO
-            </p>
-            <h2 className="font-['Pretendard'] text-[28px] leading-[38px] font-bold text-text-primary md:text-[38px] md:leading-[52px]">
-              학종의 진짜 가치를
-              <br />
-              탐구로에서 시작하세요.
-            </h2>
-            <p className="font-['Pretendard'] text-[14px] leading-[23px] text-text-secondary">
-              *탐구로는 초중고등교육법을 준수합니다.
-              <br />
-              ‘학종 A to Z’ 자료는 탐구로 입시 연구팀이 자체 개발한 가상 생기부입니다.
-            </p>
-          </div>
-
-          {/* CTA columns */}
-          <div className="grid grid-cols-1 gap-[32px] border-t border-accent-soft pt-[32px] sm:grid-cols-2 lg:grid-cols-2 lg:flex-1 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-[40px]">
-            <div className="flex flex-col gap-[16px]">
-              <div className="flex flex-col gap-[8px]">
-                <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-accent">
-                  학종 A to Z
-                </p>
-                <p className="font-['Pretendard'] text-[22px] leading-[32px] font-bold text-text-primary">
-                  매월 쌓이는 실전 자료를
-                  <br />
-                  지금 확인하세요.
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => toast(RELEASE_MESSAGE, { id: "release-notice" })}
-                className="mt-auto flex h-[52px] w-full max-w-[220px] cursor-pointer items-center justify-center rounded-[14px] bg-action-primary px-[24px] font-['Pretendard'] text-[15px] font-bold whitespace-nowrap text-text-inverse transition-opacity hover:opacity-90"
-              >
-                자료 구독하기
-              </button>
-            </div>
-
-            <div className="flex flex-col gap-[16px]">
-              <div className="flex flex-col gap-[8px]">
-                <p className="font-['Pretendard'] text-[13px] font-bold whitespace-nowrap text-accent">
-                  멘토링
-                </p>
-                <p className="font-['Pretendard'] text-[22px] leading-[32px] font-bold text-text-primary">
-                  직접 해본 합격자에게
-                  <br />
-                  실전 답을 얻으세요.
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => toast(RELEASE_MESSAGE, { id: "release-notice" })}
-                className="mt-auto flex h-[52px] w-full max-w-[220px] cursor-pointer items-center justify-center rounded-[14px] bg-surface px-[24px] font-['Pretendard'] text-[15px] font-bold whitespace-nowrap text-text-primary transition-colors hover:bg-surface-hover"
-              >
-                멘토 찾아보기
-              </button>
-            </div>
-          </div>
-        </div>
+    <section id="contact" className="scroll-mt-[56px] bg-surface px-[12px]">
+      <div className="mx-auto flex max-w-[980px] flex-col items-center px-[8px] pt-[140px] pb-[56px] text-center md:pt-[200px] md:pb-[80px]">
+        <p className="text-[15px] font-semibold text-accent md:text-[17px]">
+          시작하기
+        </p>
+        <h2 className="mt-[12px] text-[36px] leading-[1.2] font-bold tracking-[-0.035em] text-text-primary md:text-[56px]">
+          학종의 <span className="highlighter">진짜 가치</span>를
+          <br />
+          탐구로에서 시작하세요.
+        </h2>
       </div>
+
+      <div className="mx-auto grid max-w-[1416px] grid-cols-1 gap-[12px] md:grid-cols-2">
+        {OFFERS.map((offer) => (
+          <article
+            key={offer.eyebrow}
+            className={`reveal flex min-h-[360px] flex-col items-center justify-center rounded-[28px] px-[24px] py-[64px] text-center md:min-h-[420px] ${offer.tone}`}
+          >
+            <p className="text-[14px] font-semibold text-accent md:text-[15px]">
+              {offer.eyebrow}
+            </p>
+            <h3 className="mt-[12px] text-[28px] leading-[1.3] font-bold tracking-[-0.03em] whitespace-pre-line text-text-primary md:text-[36px]">
+              {offer.title}
+            </h3>
+            <ReleaseButton className={`${PILL_PRIMARY} mt-[32px]`}>
+              {offer.action}
+            </ReleaseButton>
+          </article>
+        ))}
+      </div>
+
+      <p className="mx-auto max-w-[980px] px-[8px] pt-[32px] pb-[96px] text-center text-[13px] leading-[1.7] text-text-secondary md:pb-[140px]">
+        탐구로는 초중고등교육법을 준수합니다. ‘학종 A to Z’ 자료는 탐구로 입시
+        연구팀이 자체 개발한 가상 생기부입니다.
+      </p>
     </section>
   );
 }
