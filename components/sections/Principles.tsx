@@ -2,8 +2,8 @@ import type { JSX } from "react";
 
 const MONTHS = ["8월호", "9월호", "10월호"];
 const KNOWHOW_STEPS = [
-  { label: "탐구 주제 좁히기", done: true },
-  { label: "실험·조사 설계하기", done: true },
+  { label: "실험 프로그램 사용법", done: true },
+  { label: "실험장비 및 실험실 대여법", done: true },
   { label: "보고서 구조 잡기", done: false },
 ];
 
@@ -20,7 +20,9 @@ function TileHeading({
 }): JSX.Element {
   return (
     <div className="flex flex-col items-center text-center">
-      <p className="text-[14px] font-semibold text-accent md:text-[15px]">{eyebrow}</p>
+      <p className="text-[14px] font-semibold text-accent md:text-[15px]">
+        {eyebrow}
+      </p>
       <h3
         className={`mt-[10px] text-[30px] leading-[1.2] font-bold tracking-[-0.03em] md:text-[40px] ${
           inverse ? "text-text-inverse" : "text-text-primary"
@@ -89,7 +91,10 @@ export default function Principles(): JSX.Element {
             title="교세특 워크북"
             description="워크북을 따라가면 교세특이 뚝딱, 매월 추가되는 워크북"
           />
-          <div aria-hidden="true" className="relative h-[260px] w-[260px] md:h-[280px] md:w-[300px]">
+          <div
+            aria-hidden="true"
+            className="relative h-[260px] w-[260px] md:h-[280px] md:w-[300px]"
+          >
             {MONTHS.map((month, index) => {
               const latest = index === MONTHS.length - 1;
               return (
