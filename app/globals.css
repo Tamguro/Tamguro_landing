@@ -14,6 +14,7 @@
   --palette-brand-blue-transparent: #319bff00;
   --palette-brand-blue-wash: #e6f3ff; /* app: AppColors.paymentNotice */
   --palette-soft-surface: #f5f5f5; /* app: AppColors.softSurface */
+  --palette-cool-line: #e5e8ed; /* app: AppColors.coolLine */
   --palette-white-68: #ffffffad;
   --palette-white-14: #ffffff24;
   --palette-shadow-navy-18: #0d0f172e;
@@ -36,6 +37,7 @@
   --text-inverse-muted: var(--palette-white-68);
   --border-default: var(--palette-line);
   --border-strong: var(--palette-line-strong);
+  --border-cool: var(--palette-cool-line);
   --border-inverse: var(--palette-white-14);
   --action-primary: var(--palette-ink);
   --shadow-phone: var(--palette-shadow-navy-18);
@@ -58,6 +60,7 @@
   --color-text-inverse-muted: var(--text-inverse-muted);
   --color-border-default: var(--border-default);
   --color-border-strong: var(--border-strong);
+  --color-border-cool: var(--border-cool);
   --color-border-inverse: var(--border-inverse);
   --color-action-primary: var(--action-primary);
   --font-sans: var(--font-pretendard), sans-serif;

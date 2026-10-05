@@ -1,6 +1,9 @@
 import type { JSX } from "react";
 
 const MONTHS = ["8월호", "9월호", "10월호"];
+// Skeleton 세특 lines for the case-study tile; the good sample marks a few.
+const SHEET_LINES = [92, 100, 76, 88, 100, 64, 96, 82, 58];
+const HIGHLIGHTED_LINES = [1, 4, 6];
 const KNOWHOW_STEPS = [
   { label: "실험 프로그램 사용법", done: true },
   { label: "실험장비 및 실험실 대여법", done: true },
@@ -31,7 +34,7 @@ function TileHeading({
         {title}
       </h3>
       <p
-        className={`mt-[12px] max-w-[360px] text-[17px] leading-[1.5] md:text-[19px] ${
+        className={`mt-[12px] max-w-[360px] text-[17px] leading-[1.5] whitespace-pre-line md:text-[19px] ${
           inverse ? "text-text-inverse-muted" : "text-text-secondary"
         }`}
       >
@@ -89,7 +92,7 @@ export default function Principles(): JSX.Element {
           <TileHeading
             eyebrow="매월 추가"
             title="교세특 워크북"
-            description="워크북을 따라가면 교세특이 뚝딱, 매월 추가되는 워크북"
+            description={"워크북을 따라가면 교세특이 뚝딱,\n매월 추가되는 워크북"}
           />
           <div
             aria-hidden="true"
@@ -100,7 +103,7 @@ export default function Principles(): JSX.Element {
               return (
                 <div
                   key={month}
-                  className="absolute inset-x-0 bottom-0 flex h-[170px] flex-col justify-between rounded-[18px] border border-border-strong bg-paper p-[20px] shadow-[0_18px_30px_-20px_var(--shadow-phone)] md:h-[190px]"
+                  className="absolute inset-x-0 bottom-0 flex h-[170px] flex-col justify-between rounded-[18px] border border-border-cool bg-surface p-[20px] shadow-[0_18px_30px_-20px_var(--shadow-phone)] md:h-[190px]"
                   style={{
                     transform: `translateY(${(index - 2) * 46}px) scale(${1 - (2 - index) * 0.05})`,
                     zIndex: index,
@@ -168,7 +171,7 @@ export default function Principles(): JSX.Element {
           />
           <div
             aria-hidden="true"
-            className="grid w-full max-w-[400px] grid-cols-2 gap-[10px]"
+            className="grid w-full max-w-[440px] grid-cols-2 gap-[10px]"
           >
             {[
               { label: "나쁜 세특", good: false },
@@ -176,7 +179,7 @@ export default function Principles(): JSX.Element {
             ].map((sample) => (
               <div
                 key={sample.label}
-                className="flex flex-col gap-[10px] rounded-[16px] border border-border-strong bg-paper p-[16px]"
+                className="flex flex-col gap-[12px] rounded-[16px] border border-border-cool bg-surface p-[18px]"
               >
                 <span
                   className={`text-[12px] font-bold ${
@@ -185,13 +188,13 @@ export default function Principles(): JSX.Element {
                 >
                   {sample.good ? "✓" : "✕"} {sample.label}
                 </span>
-                {[92, 100, 76, 88, 60].map((width, line) => (
+                {SHEET_LINES.map((width, line) => (
                   <span
                     key={line}
-                    className="relative h-[8px] rounded-full bg-border-default"
+                    className="relative h-[8px] rounded-full bg-border-cool"
                     style={{ width: `${width}%` }}
                   >
-                    {sample.good && line % 2 === 1 && (
+                    {sample.good && HIGHLIGHTED_LINES.includes(line) && (
                       <span className="absolute inset-y-0 left-[10%] w-[60%] rounded-full bg-accent-soft" />
                     )}
                   </span>
