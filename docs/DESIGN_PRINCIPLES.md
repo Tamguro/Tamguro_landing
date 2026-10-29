@@ -34,7 +34,7 @@
 
 ## 1. 한 문장 요약
 
-> **기존 탐구로 팔레트와 Pretendard 한 가지 폰트만으로, Apple의 "한 화면 한 메시지" 구성과 Toss의 "스크롤로 이야기하는" 리듬을 빌려, 흰 바탕 위 쿨톤의 차분한 제품 페이지를 만든다.**
+> **기존 탐구로 팔레트와 IBM Plex Sans(라틴)·IBM Plex Sans KR(한글) 한 계열만으로, Apple의 "한 화면 한 메시지" 구성과 Toss의 "스크롤로 이야기하는" 리듬을 빌려, 흰 바탕 위 쿨톤의 차분한 제품 페이지를 만든다.**
 
 강조는 한 곳에만 씁니다. 브랜드 블루 `#319BFF`는 라벨·숫자·형광펜·진행 표시에만 쓰고, 넓은 면에는 쓰지 않습니다.
 
@@ -47,7 +47,7 @@
 | 컬러 원본(primitive) | `app/globals.css`의 `--palette-*` | 앱 `tamguro-app/lib/app/theme/app_colors.dart`, Figma 변수 `TG · Color`와 같은 값 |
 | 의미 토큰(semantic) | `app/globals.css`의 `--surface`, `--text-*`, `--border-*` 등 | 컴포넌트는 **의미 토큰만** 사용 |
 | Tailwind 색 이름 | `app/globals.css`의 `@theme inline` | `bg-surface`, `text-text-secondary`, `border-border-cool` 등 |
-| 폰트 | `app/layout.tsx` (`next/font/local`, Pretendard Variable 45–920) | `--font-pretendard` → `--font-sans` |
+| 폰트 | `app/layout.tsx` (`next/font/google`, IBM Plex Sans + IBM Plex Sans KR, 200/400/500/600/700) | `--font-plex-sans`, `--font-plex-sans-kr` → `--font-sans` |
 | 버튼 스타일 | `lib/ui.ts` (`PILL_PRIMARY` / `PILL_SECONDARY` / `PILL_SMALL`) | 버튼을 새로 만들지 말고 이것을 재사용 |
 | 폰 목업 | `components/PhoneMockup.tsx` | 화면 이미지 + CSS 베젤 |
 | 모션 | `app/globals.css` 하단 (`rise`, `sweep`, `expand`, `ink-fill`, `draw`, `.app-rail-*`) | |
@@ -89,7 +89,7 @@
 2. **한 화면에 한 메시지.** 섹션은 `작은 파란 라벨 → 큰 제목 → 회색 본문 → (버튼 또는 시각 요소)` 순서를 지킨다.
 3. **강조는 한 곳에.** 브랜드 블루는 면이 아니라 점·선·글자에만 쓴다. 넓은 강조 면은 `wash`(아주 연한 파랑)나 잉크(어두운 타일)로 처리한다.
 4. **전체 색감은 쿨톤.** 하늘색·흰색·연회색·잉크로 구성한다. 크림·베이지 같은 웜톤 면(`#FFFDF5`, `#E8E5DB`)은 쿨톤 배경 위에서 떠 보이므로 카드 면에 쓰지 않는다. (2026-10-05 피드백)
-5. **굵기 대비로 성격을 만든다.** 폰트는 Pretendard 하나뿐이므로 900 ↔ 160 같은 극단적 굵기 대비(예: `A`**to**`Z`, "이해/실행/완성")로 개성을 낸다.
+5. **굵기 대비로 성격을 만든다.** 폰트는 IBM Plex 한 계열뿐이므로 700 ↔ 200 같은 굵기 대비(예: `A`**to**`Z`, "이해/실행/완성")로 개성을 낸다.
 6. **구조 장치는 사실을 반영한다.** 01/02/03 번호는 실제 순서가 있는 곳(역할 슬라이드, 이용 단계 1·2·3)에만 쓴다. 순서가 없는 목록(A to Z 자료 4종)에는 번호 대신 태그(개념·매월 추가·실무·사례)를 쓴다.
 7. **움직임은 의미가 있을 때만, 한 곳에 집중.** 대표 연출은 "앱 화면 가로 슬라이드" 하나다. 나머지는 등장 효과 정도로 조용하게 둔다.
 8. **이미지는 선명해야 한다.** 폰 화면은 Figma 원본을 3배로 내보내고, 테두리(베젤)는 CSS로 그린다.
@@ -156,8 +156,8 @@
 
 ### 6.1 폰트
 
-- **Pretendard Variable 하나만** 씁니다(`next/font/local`, 굵기 45–920, `display: swap`).
-- 클래스는 `font-sans`(기본 상속). 새 코드에 `font-['Pretendard']`를 쓰지 않습니다(대체 폰트가 없어 로컬 미설치 환경에서 깨질 수 있음).
+- **IBM Plex Sans + IBM Plex Sans KR만** 씁니다(`next/font/google`, 굵기 200/400/500/600/700, `display: swap`). 라틴·숫자는 Plex Sans, 한글은 Plex Sans KR이 그립니다. 700보다 굵은 굵기는 없습니다.
+- 클래스는 `font-sans`(기본 상속). 새 코드에 `font-['IBM Plex Sans KR']` 같은 직접 지정을 쓰지 않습니다(대체 폰트가 없어 로컬 미설치 환경에서 깨질 수 있음).
 - 숫자(01/02/03, byte, 진행 번호)는 `tabular-nums`.
 
 ### 6.2 굵기 사용
@@ -466,7 +466,7 @@
 - 웹과 같은 내용이 Figma `TG · Landing` 페이지의 **L03 · Apple/Toss Redesign**(`997:28`)에 있습니다. 앱 화면 섹션은 가로 구성(무대 1440×744, 트랙 4320px, x를 −1440·−2880으로 옮기면 02·03 미리보기).
 - 컴포넌트(`L03 · Components`): **Phone**(screen = student / parent / mentor, 3배 화면 이미지 포함), **Pill**(kind = primary / secondary / small, `Label` 텍스트 속성).
 - 색은 `TG · Color` 변수에 연결되어 있고, 이번에 추가한 변수: `color/brand-blue-wash`, `color/white-68`, `color/white-14`.
-- **폰트 주의**: Figma 원격 실행 환경에서는 로컬 폰트 Pretendard를 불러올 수 없어 **Noto Sans KR**로 만들어져 있습니다. Figma 데스크톱에서 L03 프레임과 Components 프레임을 선택하고 폰트를 Pretendard로 바꾸면 굵기(Thin/Regular/Medium/Bold/Black)가 유지된 채 교체됩니다.
+- **폰트**: Figma 텍스트는 IBM Plex Sans KR(Regular/Medium/SemiBold/Bold)로 맞춰져 있습니다.
 - Figma는 `keep-all`이 없어 긴 문구는 직접 줄바꿈을 넣었습니다.
 - **아직 Figma에 반영되지 않은 웹 변경**(2026-10-05): 워크북 설명 줄바꿈, 케이스 스터디 박스 확장(줄 9개, 440px), 워크북 카드·세특 박스 쿨톤(흰 면 + `#E5E8ED`). Figma에는 `coolLine`에 해당하는 `color/cool-line` 변수가 이미 있습니다.
 
@@ -488,7 +488,7 @@
 
 ## 18. 하지 말 것 (Anti-patterns)
 
-- 새 폰트 추가, `font-['Pretendard']` 같은 대체 없는 폰트 지정.
+- 새 폰트 추가, `font-['IBM Plex Sans KR']` 같은 대체 없는 폰트 지정, 700을 넘는 굵기.
 - 컴포넌트에 hex 직접 사용, 앱·Figma에 없는 새 색 발명.
 - 크림·베이지 같은 웜톤 면을 카드에 사용.
 - 브랜드 블루 면 위 흰 글씨(버튼 포함).
@@ -523,6 +523,7 @@
 | 2026-10-05 | 워크북 설명 직접 줄바꿈("뚝딱," 뒤) | 피드백: 모바일에서 "매월" 고아 단어 |
 | 2026-10-05 | 케이스 스터디 박스 줄 5→9개, 폭 400→440px | 피드백: 부제목과 박스 사이 간격 과다 |
 | 2026-10-05 | 워크북 카드·세특 박스 웜톤 → 쿨톤(`#E5E8ED`) | 피드백: 쿨톤 페이지에서 연노랑이 떠 보임 |
+| 2026-10-30 | 폰트를 Pretendard → IBM Plex Sans + IBM Plex Sans KR로 교체, 굵기 900·820→700, 160→200 | 사용자 요청: AI가 흔히 쓰는 폰트 대신 탐구로만의 인상. Plex는 700이 최대 |
 
 ---
 

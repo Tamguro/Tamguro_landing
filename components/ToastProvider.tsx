@@ -13,7 +13,7 @@ export default function ToastProvider() {
           color: "var(--text-inverse)",
           borderRadius: "14px",
           padding: "14px 18px",
-          fontFamily: "var(--font-pretendard), sans-serif",
+          fontFamily: "var(--font-plex-sans), var(--font-plex-sans-kr), sans-serif",
           fontSize: "14px",
         },
       }}

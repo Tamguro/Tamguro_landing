@@ -61,14 +61,14 @@ export default function ForEveryRole(): JSX.Element {
           {STEPS.map((step, index) => (
             <li key={step.label} className="reveal relative flex flex-col">
               <div className="flex items-center gap-[14px]">
-                <span className="relative flex size-[56px] items-center justify-center rounded-full border border-accent bg-surface-inverse text-[18px] font-[820] text-text-inverse tabular-nums">
+                <span className="relative flex size-[56px] items-center justify-center rounded-full border border-accent bg-surface-inverse text-[18px] font-bold text-text-inverse tabular-nums">
                   {index + 1}
                 </span>
                 <span className="text-[13px] font-bold text-text-inverse-muted md:hidden">
                   {step.verb}
                 </span>
               </div>
-              <p className="mt-[36px] hidden text-[64px] leading-none font-[160] tracking-[-0.04em] text-accent md:block lg:text-[84px]">
+              <p className="mt-[36px] hidden text-[64px] leading-none font-extralight tracking-[-0.04em] text-accent md:block lg:text-[84px]">
                 {step.verb}
               </p>
               <p className="mt-[28px] text-[13px] font-bold text-accent md:mt-[32px]">

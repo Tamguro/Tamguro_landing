@@ -5,7 +5,7 @@ export default function Footer(): JSX.Element {
     <footer className="bg-surface-muted px-[20px] md:px-[40px]">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-[20px] py-[40px] text-[12px] leading-[1.7] text-text-secondary">
         <div className="flex items-center gap-[8px] border-b border-border-strong pb-[20px]">
-          <span className="flex size-[24px] items-center justify-center rounded-[7px] bg-action-primary text-[10px] leading-none font-[820] text-text-inverse">
+          <span className="flex size-[24px] items-center justify-center rounded-[7px] bg-action-primary text-[10px] leading-none font-bold text-text-inverse">
             T<span className="text-accent">G</span>
           </span>
           <span className="text-[15px] font-bold text-text-primary">탐구로</span>

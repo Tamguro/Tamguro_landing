@@ -10,11 +10,9 @@ export const size = {
 };
 export const contentType = "image/png";
 
-const pretendard = await readFile(
-  join(
-    process.cwd(),
-    "node_modules/pretendard/dist/public/static/alternative/Pretendard-Bold.ttf",
-  ),
+// IBM Plex Sans KR carries the Plex Latin too, so one file covers the card.
+const plexSansKrBold = await readFile(
+  join(process.cwd(), "assets/fonts/IBMPlexSansKR-Bold.ttf"),
 );
 
 export default function OpenGraphImage() {
@@ -30,7 +28,7 @@ export default function OpenGraphImage() {
           background: SITE_COLORS.canvas,
           color: SITE_COLORS.ink,
           padding: "72px 82px",
-          fontFamily: "Pretendard",
+          fontFamily: "IBM Plex Sans KR",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
@@ -53,10 +51,10 @@ export default function OpenGraphImage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-          <div style={{ fontSize: "68px", lineHeight: 1.22, fontWeight: 800 }}>
+          <div style={{ fontSize: "68px", lineHeight: 1.22, fontWeight: 700 }}>
             학종의 진짜 가치를 실현하다.
           </div>
-          <div style={{ maxWidth: "900px", color: SITE_COLORS.slate, fontSize: "28px", lineHeight: 1.45 }}>
+          <div style={{ maxWidth: "1036px", color: SITE_COLORS.slate, fontSize: "28px", lineHeight: 1.45 }}>
             {SITE_DESCRIPTION}
           </div>
         </div>
@@ -75,8 +73,8 @@ export default function OpenGraphImage() {
       ...size,
       fonts: [
         {
-          name: "Pretendard",
-          data: pretendard,
+          name: "IBM Plex Sans KR",
+          data: plexSansKrBold,
           style: "normal",
           weight: 700,
         },

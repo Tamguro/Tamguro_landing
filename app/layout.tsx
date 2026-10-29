@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { IBM_Plex_Sans, IBM_Plex_Sans_KR } from "next/font/google";
 import ToastProvider from "@/components/ToastProvider";
 import {
   SITE_DESCRIPTION,
@@ -11,11 +11,19 @@ import {
 } from "@/lib/site";
 import "./globals.css";
 
-const pretendard = localFont({
-  src: "../node_modules/pretendard/dist/web/variable/woff2/PretendardVariable.woff2",
+// IBM Plex Sans draws Latin and digits; IBM Plex Sans KR fills in Hangul.
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["200", "400", "500", "600", "700"],
+  variable: "--font-plex-sans",
   display: "swap",
-  weight: "45 920",
-  variable: "--font-pretendard",
+});
+const plexSansKr = IBM_Plex_Sans_KR({
+  subsets: ["latin"],
+  weight: ["200", "400", "500", "600", "700"],
+  variable: "--font-plex-sans-kr",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -86,7 +94,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko" className="scroll-smooth">
-      <body className={`${pretendard.variable} font-sans antialiased`}>
+      <body className={`${plexSans.variable} ${plexSansKr.variable} font-sans antialiased`}>
         {children}
         <ToastProvider />
       </body>

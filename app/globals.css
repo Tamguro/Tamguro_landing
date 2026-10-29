@@ -63,7 +63,7 @@
   --color-border-cool: var(--border-cool);
   --color-border-inverse: var(--border-inverse);
   --color-action-primary: var(--action-primary);
-  --font-sans: var(--font-pretendard), sans-serif;
+  --font-sans: var(--font-plex-sans), var(--font-plex-sans-kr), sans-serif;
   --font-mono: monospace;
 }
 

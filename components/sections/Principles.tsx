@@ -81,9 +81,9 @@ export default function Principles(): JSX.Element {
             aria-hidden="true"
             className="text-[120px] leading-[0.85] tracking-[-0.06em] text-text-inverse select-none md:text-[176px]"
           >
-            <span className="font-[900]">A</span>
-            <span className="mx-[0.06em] font-[160] text-accent">to</span>
-            <span className="font-[900]">Z</span>
+            <span className="font-bold">A</span>
+            <span className="mx-[0.06em] font-extralight text-accent">to</span>
+            <span className="font-bold">Z</span>
           </p>
         </article>
 

@@ -17,7 +17,7 @@ export default function Header(): JSX.Element {
           href="#hero"
           className="flex items-center gap-[8px] rounded-[8px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
         >
-          <span className="flex size-[28px] items-center justify-center rounded-[8px] bg-action-primary text-[11px] leading-none font-[820] text-text-inverse">
+          <span className="flex size-[28px] items-center justify-center rounded-[8px] bg-action-primary text-[11px] leading-none font-bold text-text-inverse">
             T<span className="text-accent">G</span>
           </span>
           <span className="text-[17px] font-bold whitespace-nowrap text-text-primary">

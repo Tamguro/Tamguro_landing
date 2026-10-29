@@ -10,7 +10,7 @@
     x="32"
     y="32"
     fill="var(--tg-icon-ink)"
-    font-family="Pretendard, Arial, sans-serif"
+    font-family="IBM Plex Sans KR, IBM Plex Sans, Arial, sans-serif"
     font-size="22.4"
     font-weight="700"
     text-anchor="middle"

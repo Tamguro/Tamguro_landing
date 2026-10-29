@@ -226,7 +226,7 @@ export default function AppExperience(): JSX.Element {
                 style={{ "--d": index, "--ad": index ? 1 : 0 } as CSSProperties}
               >
                 <div className="app-rail-copy lg:w-[460px]">
-                  <p className="app-rail-number text-[72px] leading-none font-[820] tracking-[-0.04em] text-accent tabular-nums md:text-[88px] lg:text-[120px]">
+                  <p className="app-rail-number text-[72px] leading-none font-bold tracking-[-0.04em] text-accent tabular-nums md:text-[88px] lg:text-[120px]">
                     {story.number}
                   </p>
                   <p className="mt-[20px] text-[17px] font-bold text-accent md:text-[18px]">
