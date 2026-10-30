@@ -16,8 +16,8 @@ export interface PhoneMockupProps {
 }
 
 // 3x PNG exports of the app screens from Figma file 7f53GVdtUDCmHuJgO8sscT,
-// page "TG · iOS" (66:143). The device bezel is drawn in CSS so it stays crisp
-// at any size; only the screen itself is an image.
+// pages "TG · 앱 · 학생/학부모/멘토" (1130:479-481). The device bezel is drawn
+// in CSS so it stays crisp at any size; only the screen itself is an image.
 const SCREEN_SRC = {
   student: "/images/phones/screen-student-home@3x.png", // 14 학생 홈 (115:60)
   parent: "/images/phones/screen-parent-home@3x.png", // P01 학부모 홈 (115:228)
